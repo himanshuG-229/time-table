@@ -12,7 +12,7 @@ const subjects = {
 
 
 const processTimetable = function (req, res) {
-    var response = [];
+    let response = [];
     for (const subject in subjects) {
         fs.readFile(subjects[subject], async (err, data) => {
             if (err) {
@@ -24,12 +24,12 @@ const processTimetable = function (req, res) {
             createCsvFile.createCsvFile(response);
         });
     }
-    res.send("Time - table create successfully for class " + req.params.class);
+    res.send("Time - table created successfully for class " + req.params.class);
 };
 
-processSujectWiseTimeTable = function (data, classId, subject, finalData) {
+const processSujectWiseTimeTable = function (data, classId, subject, finalData) {
     data.forEach((element, index) => {
-        var timeData = finalData[index] ? finalData[index] : {};
+        let timeData = finalData[index] ? finalData[index] : {};
         for (const property in element) {
             if (property == "--") {
                 timeData[property] = element[property];
@@ -56,10 +56,10 @@ const coTeacherTimetable = function (req, res) {
         var response = prepareCoTeacherTableData(result);
         createCsvFile.createCsvFile(response);
     });
-    res.send('co Teacher Time table create successfully');
+    res.send('co Teacher Time table created successfully');
 }
 
-prepareCoTeacherTableData = function (data) {
+const prepareCoTeacherTableData = function (data) {
     var finalData = [];
     data.forEach(element => {
         var timeData = {};
@@ -74,7 +74,7 @@ prepareCoTeacherTableData = function (data) {
     return finalData;
 }
 
-getTeachers = function(data){
+const getTeachers = function(data){
     if(data == "Hindi"){
         data = data + " " + "English";
     }else if(data == "English"){
@@ -92,5 +92,5 @@ getTeachers = function(data){
 }
 
 
-exports.processTimetable = processTimetable
-exports.coTeacherTimetable = coTeacherTimetable
+module.exports.processTimetable = processTimetable
+module.exports.coTeacherTimetable = coTeacherTimetable
