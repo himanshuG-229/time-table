@@ -54,7 +54,7 @@ const coTeacherTimetable = function (req, res) {
         }
         var result = await neatCsv(data);
         var response = prepareCoTeacherTableData(result);
-        createCsvFile(response);
+        createCsvFile.createCsvFile(response);
     });
     res.send('aaa');
 }
