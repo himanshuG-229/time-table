@@ -56,7 +56,7 @@ const coTeacherTimetable = function (req, res) {
         var response = prepareCoTeacherTableData(result);
         createCsvFile.createCsvFile(response);
     });
-    res.send('aaa');
+    res.send('co Teacher Time table create successfully');
 }
 
 prepareCoTeacherTableData = function (data) {
