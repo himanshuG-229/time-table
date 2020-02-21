@@ -65,6 +65,51 @@ processSujectWiseTimeTable = function (data, classId, subject, finalData) {
     return finalData;
 }
 
+const coTeacherTimetable = function (req, res) {
+    fs.readFile('result/class-time-table.csv', async (err, data) => {
+        if (err) {
+            console.error(err)
+            return
+        }
+        var result = await neatCsv(data);
+        var response = prepareCoTeacherTableData(result);
+        createCsvFile(response);
+    });
+    res.send('aaa');
+}
+
+prepareCoTeacherTableData = function (data) {
+    var finalData = [];
+    data.forEach(element => {
+        var timeData = {};
+        for (const property in element) {
+            if (property == "--") {
+                timeData[property] = element[property];
+            }
+            timeData[property] = getTeachers(element[property]);
+        }
+        finalData.push(timeData);
+    })
+    return finalData;
+}
+
+getTeachers = function(data){
+    if(data == "Hindi"){
+        data = data + " " + "English";
+    }else if(data == "English"){
+        data = data + "Maths";
+    }else if(data == "Maths"){
+        data = data + "Kannada";
+    }else if(data == "Kannada"){
+        data = data + "Science";
+    }else if(data == "Science"){
+        data = data + "Hindi";
+    }else {
+        data = "Hindi Math";
+    }
+    return data;
+}
 
 
 exports.processTimetable = processTimetable
+exports.coTeacherTimetable = coTeacherTimetable
