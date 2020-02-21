@@ -1,0 +1,30 @@
+{
+  "name": "time-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himanshuG-229/time-table.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/himanshuG-229/time-table/issues"
+  },
+  "homepage": "https://github.com/himanshuG-229/time-table#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^2.3.2",
+    "csv-writer": "^1.6.0",
+    "express": "^4.17.1",
+    "neat-csv": "^5.2.0",
+    "nodemon": "^2.0.2"
+  }
+}

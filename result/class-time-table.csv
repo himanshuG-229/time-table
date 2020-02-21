@@ -1,0 +1,10 @@
+Time,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
+8:00 AM,,,,,Hindi,Kannada
+9:00 AM,Maths,,,,,Hindi
+10:00 AM,Science,Maths,,,,
+11:00 AM,English,Science,Maths,,,
+12:00 PM,Kannada,English,Science,Maths,,
+1:00 PM,Hindi,Kannada,English,Science,Maths,
+2:00 PM,,Hindi,Kannada,English,Science,Maths
+3:00 PM,,,Hindi,Kannada,English,Science
+4:00 PM,,,,Hindi,Kannada,English
