@@ -8,12 +8,3 @@ Time,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
 2:00 PM,Kannada,English,Science,Maths,,
 3:00 PM,Hindi,Kannada,English,Science,Maths,
 4:00 PM,,Hindi,Kannada,English,Science,Maths
-,Hindi Math,Hindi Math,Hindi English,KannadaScience,EnglishMaths,ScienceHindi
-,Hindi Math,Hindi Math,Hindi Math,Hindi English,KannadaScience,EnglishMaths
-,Hindi Math,Hindi Math,Hindi Math,Hindi Math,Hindi English,KannadaScience
-,MathsKannada,Hindi Math,Hindi Math,Hindi Math,Hindi Math,Hindi English
-,ScienceHindi,MathsKannada,Hindi Math,Hindi Math,Hindi Math,Hindi Math
-,EnglishMaths,ScienceHindi,MathsKannada,Hindi Math,Hindi Math,Hindi Math
-,KannadaScience,EnglishMaths,ScienceHindi,MathsKannada,Hindi Math,Hindi Math
-,Hindi English,KannadaScience,EnglishMaths,ScienceHindi,MathsKannada,Hindi Math
-,Hindi Math,Hindi English,KannadaScience,EnglishMaths,ScienceHindi,MathsKannada

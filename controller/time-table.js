@@ -1,19 +1,6 @@
 const neatCsv = require('neat-csv');
 const fs = require('fs');
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const csvWriter = createCsvWriter({
-    path: 'result/class-time-table.csv',
-    header: [
-        { id: '--', title: 'Time' },
-        { id: 'Monday', title: 'Monday' },
-        { id: 'Tuesday', title: 'Tuesday' },
-        { id: 'Wednesday', title: 'Wednesday' },
-        { id: 'Thursday', title: 'Thursday' },
-        { id: 'Friday', title: 'Friday' },
-        { id: 'Saturday', title: 'Saturday' },
-    ]
-});
-
+const createCsvFile = require('../services/write-csv');
 
 const subjects = {
     'English': 'data/English.csv',
@@ -34,17 +21,11 @@ const processTimetable = function (req, res) {
             }
             var result = await neatCsv(data);
             response = processSujectWiseTimeTable(result, req.params.class, subject, response);
-            createCsvFile(response);
+            createCsvFile.createCsvFile(response);
         });
     }
     res.send("Time - table create successfully for class " + req.params.class);
 };
-
-createCsvFile = function (data) {
-    csvWriter
-        .writeRecords(data)
-        .then(() => console.log('The CSV file was written successfully'));
-}
 
 processSujectWiseTimeTable = function (data, classId, subject, finalData) {
     data.forEach((element, index) => {
